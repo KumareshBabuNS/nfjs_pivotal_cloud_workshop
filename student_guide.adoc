@@ -1,0 +1,24 @@
+= NFJS Pivotal Cloud-Native Application Platform Workshop
+
+Student Guide
+
+== Instructor Details
+
+Matt Stine (http://twitter.com/mstine[@mstine]) +
+Senior Project Manager - Pivotal +
+mailto:mstine@pivotal.io[mstine@pivotal.io]
+
+== Schedule
+
+8:30 AM - 9:00 AM:: Quick Intro Lecture
+9:00 AM - 11:00 AM:: Hands-On Labs!
+
+_Take a coffee/bio break whenever you like!_
+
+== Workshop Materials
+
+* link:pivotal_nfjs.pdf[Slides]
+* link:lab_01/lab_01.html[Lab 1 - From Zero to Pushing Your First Application]
+* link:lab_02/lab_02.html[Lab 2 - Binding to Cloud Foundry Services]
+* link:lab_03/lab_03.html[Lab 3 - Scaling Applications]
+* link:lab_04/lab_04.html[Lab 4 - Monitoring Applications]
