@@ -1,3 +1,4 @@
+:compat-mode:
 = Lab 3 - Scaling Applications
 
 [abstract]

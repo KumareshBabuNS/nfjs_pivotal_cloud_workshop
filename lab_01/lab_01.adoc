@@ -1,3 +1,4 @@
+:compat-mode:
 = Lab 1 - From Zero to Pushing Your First Application
 
 == Target
