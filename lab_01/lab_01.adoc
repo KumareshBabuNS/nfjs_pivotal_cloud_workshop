@@ -23,7 +23,7 @@ Follow the prompts.
 . Change to the _Spring Music_ sample application directory:
 +
 ----
-$ cd $COURSE_HOME/day_01/session_02/lab_05/spring-music
+$ cd $COURSE_HOME/lab_01/spring-music
 ----
 
 . Using the Gradle Wrapper, build and package the application:
