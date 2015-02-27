@@ -28,3 +28,4 @@ _Take a coffee/bio break whenever you like!_
 * link:lab_02/lab_02.html[Lab 2 - Binding to Cloud Foundry Services]
 * link:lab_03/lab_03.html[Lab 3 - Scaling Applications]
 * link:lab_04/lab_04.html[Lab 4 - Monitoring Applications]
+* link:lab_05/lab_05.html[Lab 5 - Pushing a Spring Cloud Microservices Architecture
