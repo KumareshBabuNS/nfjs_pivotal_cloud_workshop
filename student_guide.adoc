@@ -15,6 +15,12 @@ mailto:mstine@pivotal.io[mstine@pivotal.io]
 
 _Take a coffee/bio break whenever you like!_
 
+== First Things First
+
+. If you don't have Git installed locally, take care of that http://git-scm.com/downloads[here].
+. Create a Pivotal Web Services account https://console.run.pivotal.io/register[here].
+. Download the latest Cloud Foundry CLI https://github.com/cloudfoundry/cli/releases[here].
+
 == Workshop Materials
 
 * link:pivotal_nfjs.pdf[Slides]

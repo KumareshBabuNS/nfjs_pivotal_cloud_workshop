@@ -1,0 +1,113 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.1.RELEASE'
+        springCloudVersion = '1.0.0.RC3'
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+        jcenter()
+        maven { url "https://repo.spring.io/plugins-snapshot" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:0.3.1.BUILD-SNAPSHOT"
+    }
+}
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: "io.spring.dependency-management"
+
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url "http://m2.neo4j.org/content/repositories/releases" }
+    }
+}
+
+subprojects {
+    apply plugin: 'spring-boot'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-web")
+        compile("org.springframework.boot:spring-boot-starter-actuator")
+        compile("org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.1.1.RELEASE")
+        compile("org.springframework.cloud:spring-cloud-spring-service-connector:1.1.1.RELEASE")
+        compile("org.springframework.cloud:spring-cloud-starter-hystrix:${springCloudVersion}")
+        compile("org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}")
+
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+    }
+}
+
+project(':fortunes') {
+    jar {
+        baseName = 'fortunes'
+        version = '0.0.1-SNAPSHOT'
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-data-jpa")
+        runtime("org.hsqldb:hsqldb")
+        runtime("postgresql:postgresql:9.1-901-1.jdbc4")
+    }
+}
+
+project(':configserver') {
+    jar {
+        baseName = 'configserver'
+        version = '0.0.1-SNAPSHOT'
+    }
+
+    dependencies {
+        compile("org.springframework.cloud:spring-cloud-config-server:${springCloudVersion}")
+    }
+}
+
+project(':eureka') {
+    jar {
+        baseName = 'eureka'
+        version = '0.0.1-SNAPSHOT'
+    }
+
+    dependencies {
+        compile("org.springframework.cloud:spring-cloud-starter-eureka-server:${springCloudVersion}")
+    }
+
+    springBoot {
+        requiresUnpack = ['com.netflix.eureka:eureka-core', 'com.netflix.eureka:eureka-client']
+    }
+}
+
+project(':ui') {
+    jar {
+        baseName = 'ui'
+        version = '0.0.1-SNAPSHOT'
+    }
+
+    dependencies {
+        compile("org.springframework.cloud:spring-cloud-starter-zuul:${springCloudVersion}")
+    }
+}
+
+project(':hystrixDashboard') {
+    jar {
+        baseName = 'hystrixDashboard'
+        version = '0.0.1-SNAPSHOT'
+    }
+
+    dependencies {
+        compile("org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:${springCloudVersion}")
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}

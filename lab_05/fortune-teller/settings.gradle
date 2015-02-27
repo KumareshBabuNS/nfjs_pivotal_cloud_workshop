@@ -1,0 +1,1 @@
+include "fortunes", "configserver", "eureka", "ui", "hystrixDashboard"
